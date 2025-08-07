@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtual Postcard Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #444;
+    }
+
+    .postcard-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .postcard {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.4s ease;
+      cursor: pointer;
+    }
+
+    .postcard:hover {
+      transform: scale(1.05);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .postcard:hover .overlay {
+      opacity: 1;
+    }
+
+    .message {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .stamp {
+      align-self: flex-end;
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      border: 2px dashed #333;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 45px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      color: #333;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      background-image: radial-gradient(circle, #ddd 20%, transparent 20%);
+      background-size: 5px 5px;
+    }
+
+    @media (max-width: 600px) {
+      .postcard {
+        width: 90%;
+        height: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📮 Virtual Postcard Generator</h1>
+
+  <div class="postcard-container">
+    
+    <!-- Paris Postcard -->
+    <div class="postcard" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34');">
+      <div class="overlay">
+        <div class="message">
+          Bonjour from Paris!<br>
+          The Eiffel Tower is more magical than I imagined. 🗼
+        </div>
+        <div class="stamp">PARIS</div>
+      </div>
+    </div>
+
+    <!-- Tokyo Postcard -->
+    <div class="postcard" style="background-image: url('https://images.unsplash.com/photo-1549693578-d683be217e58');">
+      <div class="overlay">
+        <div class="message">
+          Kon'nichiwa from Tokyo!<br>
+          The cherry blossoms are breathtaking. 🌸
+        </div>
+        <div class="stamp">TOKYO</div>
+      </div>
+    </div>
+    <!-- Maldives Postcard -->
+    <div class="postcard" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');">
+      <div class="overlay">
+        <div class="message">
+          Greetings from the Maldives!<br>
+          Turquoise waters and sunsets galore. 🌅
+        </div>
+        <div class="stamp">Maldives</div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
